@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
+import { CheflyteLogo } from "@/components/brand/CheflyteLogo";
 import React from "react";
 
 const COLORS = [
@@ -24,8 +25,8 @@ export default function StyleGuidePage() {
     <main className="min-h-screen bg-brand-cream py-10 px-4 flex flex-col items-center">
       <div className="max-w-2xl w-full">
         <header className="flex items-center gap-4 mb-10">
-          <span className="inline-block w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center shadow-card">
-            <span className="text-3xl text-brand-cream">👨‍🍳</span>
+          <span className="inline-block w-12 h-12 rounded-full bg-brand-cream flex items-center justify-center shadow-card border border-brand-dark">
+            <CheflyteLogo size={36} />
           </span>
           <h1 className="text-4xl font-bold text-brand-dark font-sans tracking-tight">Cheflyte Style Guide</h1>
         </header>
