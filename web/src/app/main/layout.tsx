@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { CheflyteLogo } from "@/components/brand/CheflyteLogo";
 import Link from "next/link";
+import { useThemeStore } from "@/store/theme";
+import { useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,6 +22,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = typeof window === 'undefined' ? 'light' : useThemeStore((s) => s.theme);
+  const toggleTheme = useThemeStore((s) => s.toggleTheme);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    }
+  }, [theme]);
+
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased bg-brand-cream text-brand-dark`}>
@@ -33,7 +45,13 @@ export default function RootLayout({
             <div className="flex items-center gap-6 text-lg font-medium">
               <Link href="/" className="hover:text-brand-mustard transition-colors">Home</Link>
               <Link href="/style-guide" className="hover:text-brand-mustard transition-colors">Style Guide</Link>
-              {/* Future nav links can go here */}
+              <button
+                onClick={toggleTheme}
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                className="ml-2 p-2 rounded-full border border-brand-sage bg-brand-cream hover:bg-brand-sage hover:text-brand-cream transition-colors focus:outline-none focus:ring-2 focus:ring-brand-mustard"
+              >
+                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
             </div>
           </nav>
         </header>
