@@ -71,7 +71,7 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 - [x] 3. Install core dependencies (shadcn/ui, clsx, lucide-react, framer-motion, zustand)
 - [x] 4. Configure Tailwind theme
 - [x] 5. Integrate Inter font
-- [ ] 6. Set up Shadcn/ui
+- [x] 6. Set up Shadcn/ui
 - [ ] 7. Customise components
 - [ ] 8. Style guide page
 - [ ] 9. Base layout & nav
@@ -89,6 +89,7 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 | 3 | Done | Executor | Core dependencies installed via npm |
 | 4 | Done | Executor | Tailwind config created with brand colours |
 | 5 | Done | Executor | Inter font integrated via next/font and globals updated |
+| 6 | Done | Executor | Shadcn initialized; Button, Input, Card components added |
 
 ## Executor's Feedback or Assistance Requests
 _To be filled by Executor during implementation._ 

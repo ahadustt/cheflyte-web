@@ -12,6 +12,7 @@
 - Task 3 complete: core dependencies installed (shadcn/ui, clsx, lucide-react, framer-motion, zustand).
 - Task 4 complete: Tailwind extended with brand colours.
 - Task 5 complete: Inter font integrated via next/font and globals.
+- Task 6 complete: Shadcn/ui initialised; brand components added.
 
 ## Lessons Learned
 _(record recurring gotchas here)_
