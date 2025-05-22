@@ -67,7 +67,7 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 
 ## Project Status Board
 - [x] 1. Create feature branch
-- [ ] 2. Scaffold Next.js project
+- [x] 2. Scaffold Next.js project (generated in `web/` directory)
 - [ ] 3. Install core dependencies
 - [ ] 4. Configure Tailwind theme
 - [ ] 5. Integrate Inter font
@@ -85,6 +85,7 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 |------|--------|-------|-------|
 | All | _Not started_ | — | Awaiting human approval |
 | 1 | Done | Executor | Feature branch `feat/web-foundation` created |
+| 2 | Done | Executor | Next.js 14 scaffold generated under `web/` (CI non-interactive) |
 
 ## Executor's Feedback or Assistance Requests
 _To be filled by Executor during implementation._ 
