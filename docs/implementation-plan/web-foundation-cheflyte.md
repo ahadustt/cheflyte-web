@@ -69,8 +69,8 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 - [x] 1. Create feature branch
 - [x] 2. Scaffold Next.js project (generated in `web/` directory)
 - [x] 3. Install core dependencies (shadcn/ui, clsx, lucide-react, framer-motion, zustand)
-- [ ] 4. Configure Tailwind theme
-- [ ] 5. Integrate Inter font
+- [x] 4. Configure Tailwind theme
+- [x] 5. Integrate Inter font
 - [ ] 6. Set up Shadcn/ui
 - [ ] 7. Customise components
 - [ ] 8. Style guide page
@@ -87,6 +87,8 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 | 1 | Done | Executor | Feature branch `feat/web-foundation` created |
 | 2 | Done | Executor | Next.js 14 scaffold generated under `web/` (CI non-interactive) |
 | 3 | Done | Executor | Core dependencies installed via npm |
+| 4 | Done | Executor | Tailwind config created with brand colours |
+| 5 | Done | Executor | Inter font integrated via next/font and globals updated |
 
 ## Executor's Feedback or Assistance Requests
 _To be filled by Executor during implementation._ 
