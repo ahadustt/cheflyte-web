@@ -9,6 +9,7 @@
 - Planner drafted the foundation plan covering project scaffold, Tailwind theme, design system components (Button, Input, Card), layout, and CI tooling.
 - Task 1 complete: feature branch `feat/web-foundation` created. Proceeding to scaffold Next.js project.
 - Task 2 complete: Next.js 14 project scaffolded in `web/` directory.
+- Task 3 complete: core dependencies installed (shadcn/ui, clsx, lucide-react, framer-motion, zustand).
 
 ## Lessons Learned
 _(record recurring gotchas here)_
