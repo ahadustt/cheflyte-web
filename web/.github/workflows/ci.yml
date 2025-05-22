@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main, feat/web-foundation]
+  pull_request:
+    branches: [main, feat/web-foundation]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Lint
+        run: pnpm lint
+      - name: Format Check
+        run: pnpm run format:check
+      - name: Build
+        run: pnpm build
