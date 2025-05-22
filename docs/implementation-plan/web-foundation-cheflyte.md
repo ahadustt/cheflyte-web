@@ -73,10 +73,10 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 - [x] 5. Integrate Inter font
 - [x] 6. Set up Shadcn/ui
 - [x] 7. Customise components
-- [ ] 8. Style guide page
-- [ ] 9. Base layout & nav
-- [ ] 10. Zustand example store
-- [ ] 11. Quality tooling & CI
+- [x] 8. Style guide page
+- [x] 9. Base layout & nav
+- [x] 10. Zustand example store
+- [x] 11. Quality tooling & CI
 - [ ] 12. Documentation & polish
 - [ ] 13. Final review
 
@@ -91,6 +91,10 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 | 5 | Done | Executor | Inter font integrated via next/font and globals updated |
 | 6 | Done | Executor | Shadcn initialized; Button, Input, Card components added |
 | 7 | Done | Executor | Brand colours applied via CSS vars; rounded corners and shadows configured |
+| 8 | Done | Executor | /style-guide page previews brand palette, typography, Button, Input, Card |
+| 9 | Done | Executor | Sticky header, logo, nav, and homepage implemented |
+| 10 | Done | Executor | Zustand store and dark mode toggle with persistence added to header |
+| 11 | Done | Executor | Prettier, Tailwind plugin, Husky, and GitHub Actions CI added |
 
 ## Executor's Feedback or Assistance Requests
 _To be filled by Executor during implementation._ 

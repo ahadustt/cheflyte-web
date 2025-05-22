@@ -14,6 +14,10 @@
 - Task 5 complete: Inter font integrated via next/font and globals.
 - Task 6 complete: Shadcn/ui initialised; brand components added.
 - Task 7 complete: components styled to brand using CSS vars.
+- Task 8 complete: /style-guide page previews brand palette, typography, Button, Input, Card.
+- Task 9 complete: sticky header, logo, nav, and homepage implemented.
+- Task 10 complete: Zustand store and dark mode toggle with persistence added to header.
+- Task 11 complete: Prettier, Tailwind plugin, Husky, and GitHub Actions CI added.
 
 ## Lessons Learned
 _(record recurring gotchas here)_
