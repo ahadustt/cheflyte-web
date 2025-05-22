@@ -13,6 +13,7 @@
 - Task 4 complete: Tailwind extended with brand colours.
 - Task 5 complete: Inter font integrated via next/font and globals.
 - Task 6 complete: Shadcn/ui initialised; brand components added.
+- Task 7 complete: components styled to brand using CSS vars.
 
 ## Lessons Learned
 _(record recurring gotchas here)_

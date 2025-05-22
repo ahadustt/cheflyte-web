@@ -72,7 +72,7 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 - [x] 4. Configure Tailwind theme
 - [x] 5. Integrate Inter font
 - [x] 6. Set up Shadcn/ui
-- [ ] 7. Customise components
+- [x] 7. Customise components
 - [ ] 8. Style guide page
 - [ ] 9. Base layout & nav
 - [ ] 10. Zustand example store
@@ -90,6 +90,7 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 | 4 | Done | Executor | Tailwind config created with brand colours |
 | 5 | Done | Executor | Inter font integrated via next/font and globals updated |
 | 6 | Done | Executor | Shadcn initialized; Button, Input, Card components added |
+| 7 | Done | Executor | Brand colours applied via CSS vars; rounded corners and shadows configured |
 
 ## Executor's Feedback or Assistance Requests
 _To be filled by Executor during implementation._ 
