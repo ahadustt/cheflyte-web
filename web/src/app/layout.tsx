@@ -4,6 +4,8 @@ import "./globals.css";
 import { CheflyteLogo } from "@/components/brand/CheflyteLogo";
 import Link from "next/link";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { AuthProvider } from "@/components/auth/AuthProvider";
+import { AuthNav } from "@/components/auth/AuthNav";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,21 +26,26 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased bg-brand-cream text-brand-dark`}>
         <ThemeProvider>
-          <header className="sticky top-0 z-30 w-full bg-brand-cream/95 border-b border-brand-sage shadow-sm">
-            <nav className="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
-              <Link href="/" className="flex items-center gap-2 group">
-                <span className="inline-block w-9 h-9 rounded-full bg-brand-cream flex items-center justify-center border border-brand-dark">
-                  <CheflyteLogo size={28} />
-                </span>
-                <span className="text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-sage transition-colors">Cheflyte</span>
-              </Link>
-              <div className="flex items-center gap-6 text-lg font-medium">
-                <Link href="/" className="hover:text-brand-mustard transition-colors">Home</Link>
-                <Link href="/style-guide" className="hover:text-brand-mustard transition-colors">Style Guide</Link>
-              </div>
-            </nav>
-          </header>
-          <main className="max-w-4xl mx-auto px-4 py-8">{children}</main>
+          <AuthProvider>
+            <header className="sticky top-0 z-30 w-full bg-brand-cream/95 border-b border-brand-sage shadow-sm">
+              <nav className="max-w-4xl mx-auto flex items-center justify-between px-4 py-3">
+                <Link href="/" className="flex items-center gap-2 group">
+                  <span className="inline-block w-9 h-9 rounded-full bg-brand-cream flex items-center justify-center border border-brand-dark">
+                    <CheflyteLogo size={28} />
+                  </span>
+                  <span className="text-2xl font-bold tracking-tight text-brand-dark group-hover:text-brand-sage transition-colors">Cheflyte</span>
+                </Link>
+                <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-6 text-lg font-medium">
+                    <Link href="/" className="hover:text-brand-mustard transition-colors">Home</Link>
+                    <Link href="/style-guide" className="hover:text-brand-mustard transition-colors">Style Guide</Link>
+                  </div>
+                  <AuthNav />
+                </div>
+              </nav>
+            </header>
+            <main className="max-w-4xl mx-auto px-4 py-8">{children}</main>
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

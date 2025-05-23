@@ -39,6 +39,10 @@ export const signUp = async (
   displayName: string,
   role: 'user' | 'cook'
 ): Promise<UserProfile> => {
+  if (!auth || !db) {
+    throw new Error('Firebase not initialized');
+  }
+
   try {
     const result = await createUserWithEmailAndPassword(auth, email, password);
     const user = result.user;
@@ -66,6 +70,10 @@ export const signUp = async (
 };
 
 export const signIn = async (email: string, password: string): Promise<User> => {
+  if (!auth) {
+    throw new Error('Firebase not initialized');
+  }
+
   try {
     const result = await signInWithEmailAndPassword(auth, email, password);
     return result.user;
@@ -76,6 +84,10 @@ export const signIn = async (email: string, password: string): Promise<User> => 
 };
 
 export const signInWithGoogle = async (role: 'user' | 'cook'): Promise<UserProfile> => {
+  if (!auth || !db) {
+    throw new Error('Firebase not initialized');
+  }
+
   try {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
@@ -107,6 +119,10 @@ export const signInWithGoogle = async (role: 'user' | 'cook'): Promise<UserProfi
 };
 
 export const logOut = async (): Promise<void> => {
+  if (!auth) {
+    throw new Error('Firebase not initialized');
+  }
+
   try {
     await signOut(auth);
   } catch (error) {
@@ -116,6 +132,10 @@ export const logOut = async (): Promise<void> => {
 };
 
 export const getUserProfile = async (uid: string): Promise<UserProfile | null> => {
+  if (!db) {
+    throw new Error('Firebase not initialized');
+  }
+
   try {
     const userDoc = await getDoc(doc(db, 'users', uid));
     return userDoc.exists() ? (userDoc.data() as UserProfile) : null;
@@ -129,6 +149,10 @@ export const updateUserProfile = async (
   uid: string,
   updates: Partial<UserProfile>
 ): Promise<void> => {
+  if (!db) {
+    throw new Error('Firebase not initialized');
+  }
+
   try {
     await setDoc(
       doc(db, 'users', uid),
