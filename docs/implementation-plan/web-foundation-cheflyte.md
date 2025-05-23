@@ -77,7 +77,7 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 - [x] 9. Base layout & nav
 - [x] 10. Zustand example store
 - [x] 11. Quality tooling & CI
-- [ ] 12. Documentation & polish
+- [x] 12. Documentation & polish
 - [ ] 13. Final review
 
 ## Current Status / Progress Tracking
@@ -95,6 +95,7 @@ Each task includes success criteria the Executor must satisfy **before** moving 
 | 9 | Done | Executor | Sticky header, logo, nav, and homepage implemented |
 | 10 | Done | Executor | Zustand store and dark mode toggle with persistence added to header |
 | 11 | Done | Executor | Prettier, Tailwind plugin, Husky, and GitHub Actions CI added |
+| 12 | Done | Executor | README, CODEOWNERS, contributing, and issue templates added |
 
 ## Executor's Feedback or Assistance Requests
 _To be filled by Executor during implementation._ 
