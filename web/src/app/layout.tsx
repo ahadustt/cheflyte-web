@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { CheflyteLogo } from "@/components/brand/CheflyteLogo";
 import Link from "next/link";
-import { Moon, Sun } from "lucide-react";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
