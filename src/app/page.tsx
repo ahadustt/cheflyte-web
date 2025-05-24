@@ -5,6 +5,7 @@ import { ChefHat, Shield, Sparkles, Users, Award, Clock, Star, Globe } from 'luc
 import { HeroCheflyte } from "@/components/illustrations/HeroCheflyte";
 import { FeatureAIMatching } from "@/components/illustrations/FeatureAIMatching";
 import { FeatureChefPro } from "@/components/illustrations/FeatureChefPro";
+import { LottieAnimation } from "@/components/illustrations/LottieAnimation";
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
                 { value: "4.9★", label: "Average Rating" }
               ]}
               className="rounded-3xl"
-              illustration={<HeroCheflyte height={240} style={{ width: '100%' }} />}
+              illustration={<LottieAnimation src="/animations/chef-cooking.json" width="100%" height={300} />}
             />
           </section>
 

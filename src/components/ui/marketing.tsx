@@ -66,15 +66,15 @@ export function HeroSection({
   illustration
 }: HeroSectionProps) {
   const variantStyles = {
-    default: 'bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800',
-    gradient: 'bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600',
+    default: 'bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:to-gray-800',
+    gradient: 'bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900',
     video: 'bg-black relative overflow-hidden',
     minimal: 'bg-white dark:bg-gray-900'
   };
 
   const textStyles = {
     default: 'text-gray-900 dark:text-white',
-    gradient: 'text-white',
+    gradient: 'text-gray-900 dark:text-white',
     video: 'text-white',
     minimal: 'text-gray-900 dark:text-white'
   };
@@ -111,9 +111,12 @@ export function HeroSection({
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {illustration && (
-          <div className="flex justify-center mb-10">
-            <div className="w-full max-w-2xl">
-              {illustration}
+          <div className="flex justify-center mb-16">
+            <div className="w-full max-w-lg relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-100/20 to-accent-100/20 rounded-3xl blur-3xl"></div>
+              <div className="relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200/50 dark:border-gray-700/50">
+                {illustration}
+              </div>
             </div>
           </div>
         )}
@@ -123,7 +126,7 @@ export function HeroSection({
               <div className="mb-6">
                 <span className={cn(
                   'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium',
-                  variant === 'gradient' || variant === 'video'
+                  variant === 'video'
                     ? 'bg-white/20 text-white backdrop-blur-sm'
                     : 'bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-300'
                 )}>
@@ -142,7 +145,7 @@ export function HeroSection({
 
             <p className={cn(
               'text-xl md:text-2xl mb-10 leading-relaxed',
-              variant === 'gradient' || variant === 'video'
+              variant === 'video'
                 ? 'text-white/90'
                 : 'text-gray-600 dark:text-gray-300'
             )}>
@@ -152,7 +155,7 @@ export function HeroSection({
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <HoverScale>
                 <Button
-                  variant={variant === 'gradient' || variant === 'video' ? 'secondary' : 'gradient'}
+                  variant={variant === 'video' ? 'secondary' : 'gradient'}
                   size="xl"
                   onClick={primaryCTA.onClick}
                   className="text-lg font-semibold"
@@ -165,12 +168,12 @@ export function HeroSection({
               {secondaryCTA && (
                 <HoverScale>
                   <Button
-                    variant={variant === 'gradient' || variant === 'video' ? 'ghost' : 'outline'}
+                    variant={variant === 'video' ? 'ghost' : 'outline'}
                     size="xl"
                     onClick={secondaryCTA.onClick}
                     className={cn(
                       'text-lg font-semibold',
-                      variant === 'gradient' || variant === 'video' && 'text-white border-white/30 hover:bg-white/10'
+                      variant === 'video' && 'text-white border-white/30 hover:bg-white/10'
                     )}
                   >
                     <PlayCircle className="mr-2 h-5 w-5" />
@@ -193,7 +196,7 @@ export function HeroSection({
                       </div>
                       <div className={cn(
                         'text-sm uppercase tracking-wide font-medium',
-                        variant === 'gradient' || variant === 'video'
+                        variant === 'video'
                           ? 'text-white/80'
                           : 'text-gray-500 dark:text-gray-400'
                       )}>
@@ -766,7 +769,7 @@ export function CallToAction({
 
   const textStyles = {
     default: 'text-gray-900 dark:text-white',
-    gradient: 'text-white',
+    gradient: 'text-gray-900 dark:text-white',
     centered: 'text-gray-900 dark:text-white',
     split: 'text-gray-900 dark:text-white'
   };

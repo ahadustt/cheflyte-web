@@ -17,6 +17,7 @@
     "firebase": "^11.8.1",
     "framer-motion": "^12.12.1",
     "idb": "^8.0.3",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.511.0",
     "next": "15.3.2",
     "openai": "^4.103.0",

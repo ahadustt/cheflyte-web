@@ -110,6 +110,9 @@
 - [2025-05-23] Header layout improvements: increased height from h-16 to h-20, larger logo (28px), better spacing (gap-4), and proper dark mode styling prevents cut-off appearance
 - [2025-05-23] Color hierarchy improvements: replaced excessive white backgrounds with gradient backgrounds, colored sections, and proper light/dark mode variants to create visual interest and reduce monotony
 - [2025-05-23] Loading states and micro-animations implementation: created comprehensive loading component library with sophisticated animations - intersection observer API is essential for performant scroll-triggered animations, and staggered animation timing creates professional sequential effects that guide user attention naturally
+- [2025-05-23] GitHub push failed due to a >100MB file in node_modules accidentally committed. Used git-filter-repo with --force to remove node_modules/@next/swc-darwin-arm64/next-swc.darwin-arm64.node from history, then force-pushed. All collaborators must re-clone the repository. .gitignore now properly excludes node_modules. Repository is now compliant with GitHub's file size limits.
+- [2025-05-23] Homepage hero SVG illustration created and integrated as a React component. Illustration is responsive, accessible, and visually matches the premium Cheflyte design system. HeroSection now supports an illustration prop. Subtask complete and ready for user review.
+- [2025-05-23] Custom World-Class Professional Chefs SVG illustration created and integrated into the FeatureShowcase section. Icon is responsive, accessible, and visually matches the Cheflyte design system. Subtask complete and ready for user review.
 
 ## Lessons Learned
 - [2025-05-22] Design system must evolve to match user expectations for premium AI platforms
