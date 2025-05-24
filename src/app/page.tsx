@@ -4,6 +4,7 @@ import { HeroSection, FeatureShowcase, TestimonialSection, StatsSection, CallToA
 import { ChefHat, Shield, Sparkles, Users, Award, Clock, Star, Globe } from 'lucide-react';
 import { HeroCheflyte } from "@/components/illustrations/HeroCheflyte";
 import { FeatureAIMatching } from "@/components/illustrations/FeatureAIMatching";
+import { FeatureChefPro } from "@/components/illustrations/FeatureChefPro";
 
 export default function Home() {
   return (
@@ -54,7 +55,7 @@ export default function Home() {
                   ]
                 },
                 {
-                  icon: <ChefHat size={24} />,
+                  icon: <FeatureChefPro />,
                   title: "World-Class Professional Chefs",
                   description: "Connect with verified professional chefs who bring restaurant-quality experiences directly to your preferred location.",
                   benefits: [
