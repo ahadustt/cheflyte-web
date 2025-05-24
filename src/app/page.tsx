@@ -2,6 +2,7 @@
 
 import { HeroSection, FeatureShowcase, TestimonialSection, StatsSection, CallToAction } from "@/components/ui/marketing";
 import { ChefHat, Shield, Sparkles, Users, Award, Clock, Star, Globe } from 'lucide-react';
+import { HeroCheflyte } from "@/components/illustrations/HeroCheflyte";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
                 { value: "4.9★", label: "Average Rating" }
               ]}
               className="rounded-3xl"
+              illustration={<HeroCheflyte height={240} style={{ width: '100%' }} />}
             />
           </section>
 

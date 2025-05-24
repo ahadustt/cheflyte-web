@@ -49,6 +49,7 @@ interface HeroSectionProps {
     label: string;
   }>;
   className?: string;
+  illustration?: React.ReactNode;
 }
 
 export function HeroSection({
@@ -61,7 +62,8 @@ export function HeroSection({
   backgroundImage,
   videoUrl,
   stats,
-  className
+  className,
+  illustration
 }: HeroSectionProps) {
   const variantStyles = {
     default: 'bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800',
@@ -108,6 +110,13 @@ export function HeroSection({
       )}
 
       <div className="relative z-10 max-w-7xl mx-auto">
+        {illustration && (
+          <div className="flex justify-center mb-10">
+            <div className="w-full max-w-2xl">
+              {illustration}
+            </div>
+          </div>
+        )}
         <div className="text-center max-w-4xl mx-auto">
           <FadeInUp>
             {subtitle && (
