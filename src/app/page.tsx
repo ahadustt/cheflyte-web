@@ -190,7 +190,7 @@ export default function Home() {
         className="bg-gradient-to-r from-primary-600 to-accent-600"
       />
 
-      {/* Call to Action Section with gray background */}
+      {/* Call to Action Section with gradient background */}
       <CallToAction
         variant="gradient"
         title="Ready to Transform Your Dining Experience?"
@@ -204,7 +204,6 @@ export default function Home() {
           onClick: () => console.log('Browse chefs clicked')
         }}
         backgroundPattern={true}
-        className="bg-gray-50 dark:bg-gray-800/50"
       />
     </main>
   );
