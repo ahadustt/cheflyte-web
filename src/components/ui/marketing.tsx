@@ -798,7 +798,7 @@ export function CallToAction({
 
   return (
     <section className={cn(
-      'py-20 px-6 relative overflow-hidden',
+      'py-20 relative overflow-hidden',
       variantStyles[variant],
       className
     )}>
@@ -808,7 +808,7 @@ export function CallToAction({
         </div>
       )}
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
         <FadeInUp>
           <h2 className={cn(
             'text-3xl md:text-5xl font-bold font-display mb-6',
