@@ -67,7 +67,7 @@ export function HeroSection({
 }: HeroSectionProps) {
   const variantStyles = {
     default: 'bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:to-gray-800',
-    gradient: 'bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900',
+    gradient: 'bg-gradient-to-br from-blue-50/80 via-white to-purple-50/80 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden',
     video: 'bg-black relative overflow-hidden',
     minimal: 'bg-white dark:bg-gray-900'
   };
@@ -81,10 +81,22 @@ export function HeroSection({
 
   return (
     <section className={cn(
-      'relative py-20 lg:py-32 px-6',
+      'relative py-24 lg:py-40 px-6',
       variantStyles[variant],
       className
     )}>
+      {/* Next-gen background effects for gradient variant */}
+      {variant === 'gradient' && (
+        <>
+          {/* Animated gradient orbs */}
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-primary-400/20 to-accent-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-l from-accent-400/15 to-primary-400/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"></div>
+        </>
+      )}
+
       {/* Background Elements */}
       {variant === 'video' && videoUrl && (
         <video
@@ -120,31 +132,40 @@ export function HeroSection({
             </div>
           </div>
         )}
-        <div className="text-center max-w-4xl mx-auto">
+        <div className={cn(
+          'text-center mx-auto',
+          illustration ? 'max-w-4xl' : 'max-w-6xl'
+        )}>
           <FadeInUp>
             {subtitle && (
-              <div className="mb-6">
+              <div className="mb-8">
                 <span className={cn(
-                  'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium',
+                  'inline-flex items-center gap-2 px-6 py-3 rounded-full text-base font-semibold backdrop-blur-sm',
                   variant === 'video'
-                    ? 'bg-white/20 text-white backdrop-blur-sm'
-                    : 'bg-primary-100 text-primary-700 dark:bg-primary-900/50 dark:text-primary-300'
+                    ? 'bg-white/20 text-white'
+                    : 'bg-gradient-to-r from-primary-100 to-accent-100 text-primary-700 dark:from-primary-900/50 dark:to-accent-900/50 dark:text-primary-300 border border-primary-200/50 dark:border-primary-700/50'
                 )}>
-                  <Sparkles className="h-4 w-4" />
+                  <Sparkles className="h-5 w-5" />
                   {subtitle}
                 </span>
               </div>
             )}
 
             <h1 className={cn(
-              'text-4xl md:text-6xl lg:text-7xl font-bold font-display mb-6 leading-tight',
+              'font-bold font-display mb-8 leading-[0.9] tracking-tight',
+              illustration 
+                ? 'text-4xl md:text-6xl lg:text-7xl' 
+                : 'text-5xl md:text-7xl lg:text-8xl xl:text-9xl',
               textStyles[variant]
             )}>
               {title}
             </h1>
 
             <p className={cn(
-              'text-xl md:text-2xl mb-10 leading-relaxed',
+              'mb-12 leading-relaxed font-medium',
+              illustration 
+                ? 'text-xl md:text-2xl max-w-4xl mx-auto' 
+                : 'text-2xl md:text-3xl lg:text-4xl max-w-5xl mx-auto',
               variant === 'video'
                 ? 'text-white/90'
                 : 'text-gray-600 dark:text-gray-300'
@@ -152,16 +173,16 @@ export function HeroSection({
               {description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
               <HoverScale>
                 <Button
                   variant={variant === 'video' ? 'secondary' : 'gradient'}
                   size="xl"
                   onClick={primaryCTA.onClick}
-                  className="text-lg font-semibold"
+                  className="text-xl font-bold px-8 py-4 h-auto"
                 >
                   {primaryCTA.text}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-3 h-6 w-6" />
                 </Button>
               </HoverScale>
 
@@ -172,11 +193,11 @@ export function HeroSection({
                     size="xl"
                     onClick={secondaryCTA.onClick}
                     className={cn(
-                      'text-lg font-semibold',
+                      'text-xl font-bold px-8 py-4 h-auto',
                       variant === 'video' && 'text-white border-white/30 hover:bg-white/10'
                     )}
                   >
-                    <PlayCircle className="mr-2 h-5 w-5" />
+                    <PlayCircle className="mr-3 h-6 w-6" />
                     {secondaryCTA.text}
                   </Button>
                 </HoverScale>
@@ -184,18 +205,24 @@ export function HeroSection({
             </div>
 
             {stats && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 {stats.map((stat, index) => (
                   <SlideInRight key={index} delay={index * 0.1}>
                     <div className="text-center">
                       <div className={cn(
-                        'text-3xl md:text-4xl font-bold font-display mb-2',
+                        'font-bold font-display mb-3',
+                        illustration 
+                          ? 'text-3xl md:text-4xl' 
+                          : 'text-4xl md:text-5xl lg:text-6xl',
                         textStyles[variant]
                       )}>
                         {stat.value}
                       </div>
                       <div className={cn(
-                        'text-sm uppercase tracking-wide font-medium',
+                        'uppercase tracking-wide font-semibold',
+                        illustration 
+                          ? 'text-sm' 
+                          : 'text-base md:text-lg',
                         variant === 'video'
                           ? 'text-white/80'
                           : 'text-gray-500 dark:text-gray-400'

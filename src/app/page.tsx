@@ -34,7 +34,6 @@ export default function Home() {
                 { value: "4.9★", label: "Average Rating" }
               ]}
               className="rounded-3xl"
-              illustration={<LottieAnimation src="/animations/chef-cooking.json" width="100%" height={400} />}
             />
           </section>
 
