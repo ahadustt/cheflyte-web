@@ -3,6 +3,7 @@
 import { HeroSection, FeatureShowcase, TestimonialSection, StatsSection, CallToAction } from "@/components/ui/marketing";
 import { ChefHat, Shield, Sparkles, Users, Award, Clock, Star, Globe } from 'lucide-react';
 import { HeroCheflyte } from "@/components/illustrations/HeroCheflyte";
+import { FeatureAIMatching } from "@/components/illustrations/FeatureAIMatching";
 
 export default function Home() {
   return (
@@ -42,7 +43,7 @@ export default function Home() {
               description="Discover what makes our platform the perfect choice for exceptional culinary experiences"
               features={[
                 {
-                  icon: <Sparkles size={24} />,
+                  icon: <FeatureAIMatching />,
                   title: "AI-Powered Matching",
                   description: "Our sophisticated algorithm analyzes your preferences, dietary needs, and event requirements to connect you with the perfect chef every time.",
                   benefits: [
