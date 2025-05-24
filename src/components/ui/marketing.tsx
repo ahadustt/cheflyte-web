@@ -896,6 +896,9 @@ export function StatsSection({
     compact: 'grid-cols-2 lg:grid-cols-4'
   };
 
+  // Check if we have a gradient background applied via className
+  const hasGradientBg = className?.includes('gradient') || variant === 'gradient';
+  
   return (
     <section className={cn(
       'py-16',
@@ -907,12 +910,22 @@ export function StatsSection({
           <div className="text-center max-w-3xl mx-auto mb-12">
             <FadeInUp>
               {title && (
-                <h2 className="text-3xl md:text-4xl font-bold font-display text-gray-900 dark:text-white mb-4">
+                <h2 className={cn(
+                  "text-3xl md:text-4xl font-bold font-display mb-4",
+                  hasGradientBg 
+                    ? "text-white" 
+                    : "text-gray-900 dark:text-white"
+                )}>
                   {title}
                 </h2>
               )}
               {description && (
-                <p className="text-lg text-gray-600 dark:text-gray-300">
+                <p className={cn(
+                  "text-lg",
+                  hasGradientBg 
+                    ? "text-white/90" 
+                    : "text-gray-600 dark:text-gray-300"
+                )}>
                   {description}
                 </p>
               )}
@@ -925,18 +938,38 @@ export function StatsSection({
             <SlideInRight key={index} delay={index * 0.1}>
               <div className="text-center">
                 {stat.icon && (
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-100 text-primary-600 dark:bg-primary-900/50 dark:text-primary-400 mb-4">
+                  <div className={cn(
+                    "inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4",
+                    hasGradientBg 
+                      ? "bg-white/20 text-white" 
+                      : "bg-primary-100 text-primary-600 dark:bg-primary-900/50 dark:text-primary-400"
+                  )}>
                     {stat.icon}
                   </div>
                 )}
-                <div className="text-3xl md:text-4xl font-bold font-display text-gray-900 dark:text-white mb-2">
+                <div className={cn(
+                  "text-3xl md:text-4xl font-bold font-display mb-2",
+                  hasGradientBg 
+                    ? "text-white" 
+                    : "text-gray-900 dark:text-white"
+                )}>
                   {stat.value}
                 </div>
-                <div className="text-lg font-medium text-gray-900 dark:text-white mb-1">
+                <div className={cn(
+                  "text-lg font-medium mb-1",
+                  hasGradientBg 
+                    ? "text-white" 
+                    : "text-gray-900 dark:text-white"
+                )}>
                   {stat.label}
                 </div>
                 {stat.description && (
-                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                  <div className={cn(
+                    "text-sm",
+                    hasGradientBg 
+                      ? "text-white/80" 
+                      : "text-gray-600 dark:text-gray-400"
+                  )}>
                     {stat.description}
                   </div>
                 )}

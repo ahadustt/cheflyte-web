@@ -125,6 +125,8 @@
 - [2025-05-23] Section visual separation: Added background colors and negative margins to create clear visual breaks between different page sections - features section now has bg-gray-50 dark:bg-gray-900/50 with full-width background using -mx and corresponding px padding
 - [2025-05-23] Button text contrast: Light mode signin button text needed much darker color for visibility - changed --color-text-secondary from gray-500 (#6b7280) to gray-800 (#1f2937) for proper contrast in light mode ghost buttons
 - [2025-05-23] Visual section separation: Use contrasting background colors (bg-gray-100 vs bg-gray-50), border-y borders, and increased padding (py-20) to create prominent visual breaks between page sections - features and testimonials sections now have clear visual distinction from hero and stats sections
+- [2025-05-23] Vouch-style end-to-end sections: Implement full-width sections by removing constrained containers and applying section-level backgrounds with constrained content containers inside - hero (gradient blue/purple), features (gray), testimonials (white), stats (gradient primary/accent), CTA (gray) creates clear visual hierarchy like Vouch website with proper edge-to-edge visual separation
+- [2025-05-23] Nested sections issue: Marketing components already include their own section wrappers with built-in spacing and layout - wrapping them in additional sections creates nested semantic issues and conflicting styles. Use className prop to override component backgrounds instead of wrapping in sections for clean, consistent layout
 
 ## Lessons Learned
 - [2025-05-22] Design system must evolve to match user expectations for premium AI platforms
@@ -322,6 +324,7 @@ Ready to apply the sophisticated design system to custom illustrations and icono
 - [2025-05-23] Button text contrast: Light mode signin button text needed much darker color for visibility - changed --color-text-secondary from gray-500 (#6b7280) to gray-800 (#1f2937) for proper contrast in light mode ghost buttons
 - [2025-05-23] Visual section separation: Use contrasting background colors (bg-gray-100 vs bg-gray-50), border-y borders, and increased padding (py-20) to create prominent visual breaks between page sections - features and testimonials sections now have clear visual distinction from hero and stats sections
 - [2025-05-23] Vouch-style end-to-end sections: Implement full-width sections by removing constrained containers and applying section-level backgrounds with constrained content containers inside - hero (gradient blue/purple), features (gray), testimonials (white), stats (gradient primary/accent), CTA (gray) creates clear visual hierarchy like Vouch website with proper edge-to-edge visual separation
+- [2025-05-23] Nested sections issue: Marketing components already include their own section wrappers with built-in spacing and layout - wrapping them in additional sections creates nested semantic issues and conflicting styles. Use className prop to override component backgrounds instead of wrapping in sections for clean, consistent layout
 
 ## Current Task
 

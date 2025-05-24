@@ -8,37 +8,37 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Primary: Bold, confident primary action
+        // Primary: Bold, confident primary action with reliable colors
         primary:
-          "bg-[var(--color-bg-primary)] text-[var(--color-text-inverse)] font-semibold shadow-lg hover:bg-[var(--color-bg-secondary)] hover:shadow-xl hover:-translate-y-0.5 focus-visible:ring-[var(--color-border-accent)] active:shadow-md transition-all duration-200",
+          "bg-blue-600 text-white font-semibold shadow-lg hover:bg-blue-700 hover:shadow-xl hover:-translate-y-0.5 focus-visible:ring-blue-500 active:shadow-md transition-all duration-200 dark:bg-blue-600 dark:hover:bg-blue-700",
         
         // Secondary: Sophisticated outline style
         secondary:
-          "bg-[var(--color-surface-secondary)] text-[var(--color-text-primary)] font-medium shadow-sm hover:bg-[var(--color-surface-hover)] hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-[var(--color-border-accent)] focus-visible:ring-offset-[var(--color-bg-primary)]",
+          "bg-white text-gray-900 border border-gray-200 font-medium shadow-sm hover:bg-gray-50 hover:shadow-md hover:-translate-y-0.5 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-700 transition-all duration-200",
           
         // Ghost: Minimal, clean interaction
         ghost:
-          "text-[var(--color-text-secondary)] font-medium hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text-primary)] focus-visible:bg-[var(--color-surface-hover)] transition-colors duration-200",
+          "text-gray-700 font-medium hover:bg-gray-100 hover:text-gray-900 focus-visible:bg-gray-100 transition-colors duration-200 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100",
           
         // Outline: Clean, modern outline
         outline:
-          "border border-[var(--color-border-primary)] bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] font-medium shadow-sm hover:bg-[var(--color-surface-hover)] hover:border-[var(--color-border-accent)] hover:shadow-md focus-visible:ring-[var(--color-border-accent)] transition-all duration-200",
+          "border border-gray-300 bg-white text-gray-900 font-medium shadow-sm hover:bg-gray-50 hover:border-gray-400 hover:shadow-md focus-visible:ring-blue-500 transition-all duration-200 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 dark:hover:border-gray-500",
           
         // Destructive: Clear error/delete actions
         destructive:
-          "bg-[var(--color-destructive)] text-[var(--color-text-inverse)] font-semibold shadow-lg hover:bg-[var(--color-destructive-hover)] hover:shadow-xl hover:-translate-y-0.5 focus-visible:ring-[var(--color-destructive)] active:shadow-md transition-all duration-200",
+          "bg-red-600 text-white font-semibold shadow-lg hover:bg-red-700 hover:shadow-xl hover:-translate-y-0.5 focus-visible:ring-red-500 active:shadow-md transition-all duration-200",
           
         // Success: Positive confirmation actions
         success:
-          "bg-[var(--color-success)] text-[var(--color-text-inverse)] font-semibold shadow-lg hover:bg-[var(--color-success-hover)] hover:shadow-xl hover:-translate-y-0.5 focus-visible:ring-[var(--color-success)] active:shadow-md transition-all duration-200",
+          "bg-green-600 text-white font-semibold shadow-lg hover:bg-green-700 hover:shadow-xl hover:-translate-y-0.5 focus-visible:ring-green-500 active:shadow-md transition-all duration-200",
           
         // Link: Text-based link style
         link: 
-          "text-[var(--color-link)] font-medium underline-offset-4 hover:underline hover:text-[var(--color-link-hover)] focus-visible:ring-[var(--color-link)] focus-visible:ring-offset-[var(--color-bg-primary)]",
+          "text-blue-600 font-medium underline-offset-4 hover:underline hover:text-blue-700 focus-visible:ring-blue-500 focus-visible:ring-offset-white dark:text-blue-400 dark:hover:text-blue-300",
           
-        // Gradient: Premium gradient effect (uses brand gradient, fallback to semantic bg/text)
+        // Gradient: Premium gradient effect with reliable colors
         gradient:
-          "bg-gradient-to-r from-[var(--color-gradient-from)] to-[var(--color-gradient-to)] text-[var(--color-text-inverse)] font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 focus-visible:ring-[var(--color-border-accent)] active:shadow-md",
+          "bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 hover:from-blue-700 hover:to-purple-700 focus-visible:ring-blue-500 active:shadow-md transition-all duration-200",
       },
       size: {
         sm: "h-8 px-3 py-1 text-sm rounded-md gap-1.5",
