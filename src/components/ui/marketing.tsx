@@ -152,10 +152,10 @@ export function HeroSection({
             )}
 
             <h1 className={cn(
-              'font-bold font-display mb-8 leading-[0.9] tracking-tight',
+              'font-bold font-display mb-8 leading-[1.1] tracking-tight',
               illustration 
                 ? 'text-4xl md:text-6xl lg:text-7xl' 
-                : 'text-5xl md:text-7xl lg:text-8xl xl:text-9xl',
+                : 'text-4xl md:text-5xl lg:text-6xl',
               textStyles[variant]
             )}>
               {title}
@@ -165,7 +165,7 @@ export function HeroSection({
               'mb-12 leading-relaxed font-medium',
               illustration 
                 ? 'text-xl md:text-2xl max-w-4xl mx-auto' 
-                : 'text-2xl md:text-3xl lg:text-4xl max-w-5xl mx-auto',
+                : 'text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto',
               variant === 'video'
                 ? 'text-white/90'
                 : 'text-gray-600 dark:text-gray-300'
@@ -173,16 +173,16 @@ export function HeroSection({
               {description}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <HoverScale>
                 <Button
                   variant={variant === 'video' ? 'secondary' : 'gradient'}
-                  size="xl"
+                  size="lg"
                   onClick={primaryCTA.onClick}
-                  className="text-xl font-bold px-8 py-4 h-auto"
+                  className="text-base font-semibold"
                 >
                   {primaryCTA.text}
-                  <ArrowRight className="ml-3 h-6 w-6" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </HoverScale>
 
@@ -190,14 +190,14 @@ export function HeroSection({
                 <HoverScale>
                   <Button
                     variant={variant === 'video' ? 'ghost' : 'outline'}
-                    size="xl"
+                    size="lg"
                     onClick={secondaryCTA.onClick}
                     className={cn(
-                      'text-xl font-bold px-8 py-4 h-auto',
+                      'text-base font-semibold',
                       variant === 'video' && 'text-white border-white/30 hover:bg-white/10'
                     )}
                   >
-                    <PlayCircle className="mr-3 h-6 w-6" />
+                    <PlayCircle className="mr-2 h-5 w-5" />
                     {secondaryCTA.text}
                   </Button>
                 </HoverScale>
@@ -205,24 +205,19 @@ export function HeroSection({
             </div>
 
             {stats && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {stats.map((stat, index) => (
                   <SlideInRight key={index} delay={index * 0.1}>
                     <div className="text-center">
                       <div className={cn(
-                        'font-bold font-display mb-3',
-                        illustration 
-                          ? 'text-3xl md:text-4xl' 
-                          : 'text-4xl md:text-5xl lg:text-6xl',
+                        'font-bold font-display mb-2',
+                        'text-3xl md:text-4xl',
                         textStyles[variant]
                       )}>
                         {stat.value}
                       </div>
                       <div className={cn(
-                        'uppercase tracking-wide font-semibold',
-                        illustration 
-                          ? 'text-sm' 
-                          : 'text-base md:text-lg',
+                        'text-sm uppercase tracking-wide font-medium',
                         variant === 'video'
                           ? 'text-white/80'
                           : 'text-gray-500 dark:text-gray-400'

@@ -374,10 +374,10 @@ export default function StyleGuide() {
               <HeroSection
                 variant="default"
                 subtitle="AI-Powered Chef Platform"
-                title="Transform Your Dining Experience"
-                description="Connect with professional chefs for unforgettable culinary experiences in the comfort of your home."
+                title="Connecting you with trusted chefs through authentic recommendations"
+                description="Professional chefs for unforgettable culinary experiences. Simple, engaging, and beautifully designed."
                 primaryCTA={{ text: "Book a Chef", onClick: () => {} }}
-                secondaryCTA={{ text: "Watch Demo", onClick: () => {} }}
+                secondaryCTA={{ text: "Learn More", onClick: () => {} }}
                 stats={[
                   { value: "10,000+", label: "Happy Customers" },
                   { value: "500+", label: "Expert Chefs" },
@@ -395,10 +395,10 @@ export default function StyleGuide() {
               <HeroSection
                 variant="gradient"
                 subtitle="Premium Culinary Experience"
-                title="Michelin-Quality Dining at Home"
-                description="Experience restaurant-quality meals crafted by professional chefs in your own kitchen."
+                title="Michelin-quality dining experiences at home"
+                description="Experience restaurant-quality meals crafted by professional chefs. Clean, modern, and beautifully balanced design."
                 primaryCTA={{ text: "Start Cooking", onClick: () => {} }}
-                secondaryCTA={{ text: "Learn More", onClick: () => {} }}
+                secondaryCTA={{ text: "Explore Chefs", onClick: () => {} }}
                 className="py-12"
               />
             </Card>
