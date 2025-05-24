@@ -179,10 +179,10 @@ export function HeroSection({
                   variant={variant === 'video' ? 'secondary' : 'gradient'}
                   size="lg"
                   onClick={primaryCTA.onClick}
+                  rightIcon={<ArrowRight className="h-5 w-5" />}
                   className="text-base font-semibold"
                 >
                   {primaryCTA.text}
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </HoverScale>
 
@@ -192,12 +192,12 @@ export function HeroSection({
                     variant={variant === 'video' ? 'ghost' : 'outline'}
                     size="lg"
                     onClick={secondaryCTA.onClick}
+                    leftIcon={<PlayCircle className="h-5 w-5" />}
                     className={cn(
                       'text-base font-semibold',
                       variant === 'video' && 'text-white border-white/30 hover:bg-white/10'
                     )}
                   >
-                    <PlayCircle className="mr-2 h-5 w-5" />
                     {secondaryCTA.text}
                   </Button>
                 </HoverScale>
@@ -791,7 +791,7 @@ export function CallToAction({
 
   const textStyles = {
     default: 'text-gray-900 dark:text-white',
-    gradient: 'text-gray-900 dark:text-white',
+    gradient: 'text-white',
     centered: 'text-gray-900 dark:text-white',
     split: 'text-gray-900 dark:text-white'
   };
@@ -831,10 +831,10 @@ export function CallToAction({
                 variant={variant === 'gradient' ? 'secondary' : 'gradient'}
                 size="xl"
                 onClick={primaryCTA.onClick}
+                rightIcon={<ArrowRight className="h-5 w-5" />}
                 className="text-lg font-semibold"
               >
                 {primaryCTA.text}
-                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </HoverScale>
 
@@ -844,6 +844,7 @@ export function CallToAction({
                   variant={variant === 'gradient' ? 'ghost' : 'outline'}
                   size="xl"
                   onClick={secondaryCTA.onClick}
+                  leftIcon={<PlayCircle className="h-5 w-5" />}
                   className={cn(
                     'text-lg font-semibold',
                     variant === 'gradient' && 'text-white border-white/30 hover:bg-white/10'

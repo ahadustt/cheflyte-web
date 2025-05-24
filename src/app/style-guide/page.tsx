@@ -60,7 +60,8 @@ import {
   Heart,
   Clock,
   Award,
-  Globe
+  Globe,
+  ArrowRight
 } from "lucide-react";
 import { Select } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
@@ -840,12 +841,10 @@ export default function StyleGuide() {
               ]}
               actions={
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm">
-                    <Filter className="h-4 w-4 mr-2" />
+                  <Button variant="outline" size="sm" leftIcon={<Filter className="h-4 w-4" />}>
                     Filter
                   </Button>
-                  <Button variant="outline" size="sm">
-                    <Download className="h-4 w-4 mr-2" />
+                  <Button variant="outline" size="sm" leftIcon={<Download className="h-4 w-4" />}>
                     Export
                   </Button>
                 </div>
@@ -889,8 +888,7 @@ export default function StyleGuide() {
               title="Weekly Bookings"
               description="Number of bookings per day this week"
               actions={
-                <Button variant="outline" size="sm">
-                  <TrendingUp className="h-4 w-4 mr-2" />
+                <Button variant="outline" size="sm" leftIcon={<TrendingUp className="h-4 w-4" />}>
                   View Details
                 </Button>
               }
@@ -1229,6 +1227,32 @@ export default function StyleGuide() {
               <Button loading>Loading</Button>
               <Button disabled>Disabled</Button>
               <Button variant="outline" loading>Loading Outline</Button>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-card-title text-gray-900 dark:text-white">Buttons with Icons</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+              Use <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">leftIcon</code> and <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">rightIcon</code> props for proper icon alignment instead of placing icons directly in children.
+              <br />
+              <strong>Note:</strong> Arrows should typically use <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-xs">rightIcon</code> to indicate forward action.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Button leftIcon={<Users size={18} />}>Left Icon</Button>
+              <Button rightIcon={<ChefHat size={18} />}>Right Icon</Button>
+              <Button variant="outline" leftIcon={<Filter size={18} />}>Filter</Button>
+              <Button variant="ghost" leftIcon={<Download size={18} />}>Download</Button>
+              <Button variant="gradient" rightIcon={<TrendingUp size={18} />}>View Details</Button>
+              <Button variant="primary" rightIcon={<ArrowRight size={18} />}>Get Started</Button>
+              <Button variant="success" rightIcon={<ArrowRight size={18} />}>Continue</Button>
+            </div>
+            <div className="mt-3 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+              <p className="text-sm text-amber-800 dark:text-amber-200">
+                <strong>✅ Correct:</strong> <code className="bg-amber-100 dark:bg-amber-800 px-2 py-1 rounded text-xs">&lt;Button leftIcon={`{<Icon />`}&gt;Text&lt;/Button&gt;</code>
+              </p>
+              <p className="text-sm text-amber-800 dark:text-amber-200 mt-1">
+                <strong>❌ Incorrect:</strong> <code className="bg-amber-100 dark:bg-amber-800 px-2 py-1 rounded text-xs">&lt;Button&gt;&lt;Icon className="mr-2" /&gt;Text&lt;/Button&gt;</code>
+              </p>
             </div>
           </div>
         </Card>

@@ -18,7 +18,7 @@ const buttonVariants = cva(
           
         // Ghost: Minimal, clean interaction
         ghost:
-          "text-[var(--color-text-muted)] font-medium hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text-primary)] focus-visible:bg-[var(--color-surface-hover)] transition-colors duration-200",
+          "text-[var(--color-text-secondary)] font-medium hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text-primary)] focus-visible:bg-[var(--color-surface-hover)] transition-colors duration-200",
           
         // Outline: Clean, modern outline
         outline:
